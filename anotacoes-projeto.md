@@ -58,6 +58,9 @@ Para isso precisa fazer a desestruturação para pegar essas duas variáveis
 
 Como definiu o projeto como json não precisa no return especificar que é JSON, ou seja, automaticamente o AdonisJS já vai entender isso
 
+## Migrations
+
+adonis migration:rollback: apagar todas migrations e dar rollback
 
 
 
