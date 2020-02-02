@@ -34,6 +34,12 @@ npm install -D eslint
 
 npx eslint --init
 
+## Configurando banco de dados
+
+Para isso rodo o comando npm i --save pg (arquivo database.config tem como instalar para cada cliente de banco de dados)
+
+adonis migration:run - Executar migrations 
+
 
 
 
