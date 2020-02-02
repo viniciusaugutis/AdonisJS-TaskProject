@@ -1,8 +1,10 @@
+## Conceitos
+
 Adonis é indicado para projetos maiores e provê muita coisa já pronta para nós desenvolvermos como autenticação, orm etc.
 
 CLI do Adonis: npm install -g @adonisjs/cli
 
-comandos: 
+## Comandos e criação do projeto
 
 adonis comando -h : -h para aparecer todas as opções que o comando oferece para nós
 
@@ -14,8 +16,7 @@ Executar o projeto:
 
 adonis serve --dev (--dev ativa a funcionalidade do nodemon)
 
-
-Estrutura de pastas do Adonis:
+## Estrutura de pastas do Adonis
 
 app: toda parte funcional do projeto, como models, controllers, jobs, hooks, exceptions, middlewares, validators, etc.
 
@@ -26,4 +27,13 @@ database: fica nossas migrations etc
 start: fica o arquivo de rotas e arquivos iniciais da aplicação
 
 ace: arquivo de interface para linha de comando. Mesma coisa que executar comando adonis
+
+## EsLint com AdonisJS
+
+npm install -D eslint
+
+npx eslint --init
+
+
+
 
