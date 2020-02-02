@@ -40,6 +40,24 @@ Para isso rodo o comando npm i --save pg (arquivo database.config tem como insta
 
 adonis migration:run - Executar migrations 
 
+## Cadastro de usuario
+
+metodo boot() é como se fosse o contrutor da classe
+
+Model: é objeto do adonis para fazer parte do orm e ter comandos sql para o model
+
+adonis make:controller User : Criar um novo controller
+
+Comando use do AdonisJS é igual ao require do node. Para bibliotecas terceiras pode usar o require, para classes do Adonis o use é mais usado.
+
+adonis route:list: Comando que mostra todas as rotas cadastradas no projeto
+
+No Adonis voce recebe na rota uma variavel chamada ctx que tem dentro dela o request e response, que é igual o request e response do express.
+
+Para isso precisa fazer a desestruturação para pegar essas duas variáveis
+
+Como definiu o projeto como json não precisa no return especificar que é JSON, ou seja, automaticamente o AdonisJS já vai entender isso
+
 
 
 
