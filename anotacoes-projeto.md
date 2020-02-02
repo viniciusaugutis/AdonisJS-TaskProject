@@ -62,5 +62,15 @@ Como definiu o projeto como json não precisa no return especificar que é JSON,
 
 adonis migration:rollback: apagar todas migrations e dar rollback
 
+## Envio de email
+
+adonis install @adonisjs/mail
+
+Arquivos .edge - template engine criada pelo adonisjs para manipular html e templates de email. Semelhante ao nunjucks
+
+Por padrão AdonisJS já busca as views de email da pasta resources/views/emails
+
+Toda vez que alterar algo no arquivo .env precisa inicializar o servidor do Zero
+
 
 

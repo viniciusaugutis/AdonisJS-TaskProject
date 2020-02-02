@@ -1,23 +1,38 @@
-"use strict";
+'use strict';
 
-const crypto = require("crypto");
+const crypto = require('crypto');
 
-const User = use("App/Models/User");
+const User = use('App/Models/User');
+const Mail = use('Mail');
 
 class ForgotPasswordController {
   async store({ request, response }) {
     try {
-      const email = request.input("email");
-      const user = await User.findByOrFail("email", email);
+      const email = request.input('email');
+      const user = await User.findByOrFail('email', email);
 
-      user.token = crypto.randomBytes(10).toString("hex");
+      user.token = crypto.randomBytes(10).toString('hex');
       user.token_created_at = new Date();
 
       await user.save();
-    } catch (err) {
-      return response.status(err.status).send({error: {message: 'Algo não deu certo, esse e-mail existe?'}})
-    }
 
+      //primeiro parametro é o template, segundo são os parametros para o email usar (variáveis)
+      //Ele é um array porque o nosso email pode ter uma versão texto além do html, com isso você pode ter dois templates
+      await Mail.send(
+        ['emails.forgot_password'],
+        { email, token: user.token, link: `${request.input('redirect_url')}?token=${user.token}` },
+        message => {
+          message
+            .to(user.email)
+            .from('vinicius_augutis@hotmail.com', 'Vinicius Augutis')
+            .subject('Recuperação de senha');
+        }
+      );
+    } catch (err) {
+      return response.status(err.status).send({
+        error: { message: 'Algo não deu certo, esse e-mail existe?' },
+      });
+    }
   }
 }
 
